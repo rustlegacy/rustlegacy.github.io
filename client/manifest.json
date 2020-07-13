@@ -1,0 +1,11 @@
+{
+    "version": "1.0.1",
+    "files": {
+        "Assembly-CSharp.dll": "D4E1BE55A2BF8A3BB00758FD51755CFE553CEE3D",
+        "uLink.dll": "88761EF49C7469570543D9F956DB93305E47481C",
+        "UnityEngine.dll": "3143774145D41AC1A6978F16784D4A932F187CE7",
+        "Assembly-CSharp-firstpass.dll": "41B1B9B00954608846F12B13C07E876CF2A4782B",
+        "Assembly-UnityScript.dll": "69A7BF709EF1C4FB393EB6C4D52DC982F45D6388",
+        "Facepunch.Cursor.dll": "E533384422883FEDF54EEFE87811654455712159"
+    }
+}
