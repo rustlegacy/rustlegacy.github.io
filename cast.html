@@ -1,0 +1,260 @@
+<head>
+    <link href="https://vjs.zencdn.net/7.8.3/video-js.css" rel="stylesheet" />
+  
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
+  <style>
+    ul{
+      padding: 0px;
+      list-style: none;
+    }
+    ul li{
+      border-bottom: solid 1px grey;
+      padding: 15px 0px 15px 15px;
+    }
+    .box-list{
+        position: relative;
+        width: 20%;
+        height: 250px;
+        overflow: auto;
+        float: left;
+    }
+    .box-video{
+      position: relative;
+      width: 80%;
+      float: left;
+    }
+    @media (max-width:768px) {
+      .box-list{
+        width: 100%;
+      }
+    }
+  </style>
+  <body>
+    <div class="box-list">
+      <ul id="lista-de-canais">
+      </ul>
+    </div>
+    <div class="box-video">
+      <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup="{}">
+        <source id="video-player" src="https://5a1c76baf08c0.streamlock.net/z343-live/z343/playlist.m3u8" type="application/x-mpegURL" />
+        <!-- <source src="https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8" type="application/x-mpegURL" /> -->
+        <!-- <source src="http://fhr.ddns.net:25461/movie/handerson/handerson/73443.mp4" type="video/mp4" /> -->
+        <!-- <source src="http://stream.mediawork.cz/retrotv//retrotvHQ1/playlist.m3u8" type="application/x-mpegURL" /> -->
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+          >
+        </p>
+      </video>
+      </div>
+
+    
+
+
+    <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
+    <script>
+
+        var lista = `#EXTM3U
+#EXTINF:-1 group-title="BBB 2020",BBB MOSAICO
+http://tv.factoryiptv.com/CFkmN9GXrx/factoryiptv/64604
+#EXTINF:-1 group-title="TV ABERTA",BAND SP HD
+http://evpp.mm.uol.com.br:1935/geob_band/app/chunklist_w210441685.m3u8
+#EXTINF:-1 group-title="TV ABERTA",SBT PI
+http://192.99.46.182:1935/pioneira-tv3/pioneira-tv3/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV CULTURA PA
+http://str.portalcultura.com.br:80/funtelpa/tv_funtelpa/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV CULTURA BA
+http://hls.fm1.com.br:8080/hls/tvbaiana.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV CULTURA PR
+http://wowza4.catve.com.br:1935/live/livestream/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV CULTURA PB
+http://stream.tvitarare.com.br/hls/site/site.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV DIARIO DO SERTÃO
+http://painelvj.com.br:1935/pdsertaotv/pdsertaotv.sdp/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TVE RS
+http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV FAAP
+http://midia.faap.br/faaplatamlive-live/stream_480/livestream.m3u8
+#EXTINF:-1 group-title="INTERNACIONAIS",DW
+http://dwstream3-lh.akamaihd.net:80/i/dwstream3_live@124409/index_1_av-p.m3u8
+#EXTINF:-1 group-title="INTERNACIONAIS",DW
+http://dwstream4-lh.akamaihd.net:80/i/dwstream4_live@131329/index_1_av-p.m3u8
+#EXTINF:-1 group-title="INTERNACIONAIS",The Weather Channel
+http://weather-lh.akamaihd.net/i/twc_1@92006/master.m3u8
+#EXTINF:-1 group-title="INTERNACIONAIS",Bloomberg TV US
+https://liveproduseast.global.ssl.fastly.net/btv/desktop/us_live.m3u8
+#EXTINF:-1 group-title="INTERNACIONAIS",Bloomberg TV EUROPE
+https://liveprodeuwest.global.ssl.fastly.net/btv/desktop/eu_live.m3u8
+#EXTINF:-1 group-title="INTERNACIONAIS",TV5 MONDE INFO
+http://v3plusinfo247hls-i.akamaihd.net/hls/live/218877/v3plusinfo247hls/index.m3u8
+#EXTINF:-1 group-title="MUSICAS",RETRO MUSIC HD
+http://stream.mediawork.cz/retrotv//retrotvHQ1/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV CULTURA HD
+http://wowza4.catve.com.br:1935/live/livestream/chunklist_w1982702716.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",REDE VIDA
+https://cvd1.cds.ebtcvd.net/live-redevida/smil:redevida.smil/playlist.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",CANÇÃO NOVA HD
+http://tvajuhls-lh.akamaihd.net:80/i/tvdesk_1@147040/index_1080_av-p.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",IMPD TV
+https://58a4464faef53.streamlock.net/impd/ngrp:impd_all/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",SBT HD
+http://192.99.46.182:1935/pioneira-tv3/pioneira-tv3/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV CAMARA
+https://stream3.camara.gov.br/tv1/manifest.m3u8
+#EXTINF:-1 group-title="TV ABERTA",CULTURA (PA)
+http://str.portalcultura.com.br:80/funtelpa/tv_funtelpa/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",CATVE
+https://5b33b873179a2.streamlock.net:1443/live/livestream/chunklist_w2140063674.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TVE BRASIL
+http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
+#EXTINF:-1 group-title="JORNALISMO",RADIO JORNAL TV
+http://evpp.mm.uol.com.br/ne10/radiojornal-recife-avra-video-web.sdp/chunklist_w653587283.m3u8
+#EXTINF:-1 group-title="INTERNACIONAIS",RED BULL TV
+https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8
+#EXTINF:-1 group-title="TV ABERTA",SBT - TV Jornal (PE)
+http://evpp.mm.uol.com.br/ne10/ne10.smil/playlist.m3u8
+#EXTINF:-1 group-title="DOCUMENTÁRIOS",RT Documentary Channel
+https://rt-doc.secure.footprint.net/1101_1600Kb.m3u8
+#EXTINF:-1 group-title="RADIO",CBN SP
+https://medias.sgr.globo.com/hls/vCBNSP/vCBNSP.m3u8
+#EXTINF:-1 group-title="ESPORTES",Red Bull TV
+https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
+#EXTINF:-1 group-title="FILMES E SÉRIES",RAI Movie (Itália)
+http://b2everyrai-lh.akamaihd.net/i/raimovie_1@67348/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV Diário do Sertão
+http://painelvj.com.br:1935/pdsertaotv/pdsertaotv.sdp/playlist.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",TV MAX
+https://59f1cbe63db89.streamlock.net:1443/tvmax/_definst_/tvmax/playlist.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",TV Pai Eterno
+https://59f1cbe63db89.streamlock.net:1443/teste01/_definst_/teste01/chunklist.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",IURD TV
+https://14398c.ha.azioncdn.net/primary/smil:tv_universal.smil/playlist.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",IMPD TV
+https://58a4464faef53.streamlock.net/impd/ngrp:impd_all/playlist.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",Rede Vida
+https://cvd1.cds.ebtcvd.net/live-redevida/smil:redevida.smil/chunklist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Rede Brasil - TV Marajoara (PA)
+http://video01.kshost.com.br/tv31966/tv31966/playlist.m3u8
+#EXTINF:-1 group-title="INFANTIL",Kuriakos Kids
+http://c2.manasat.com:1935/kkids/kkids2/chunklist_w817493835.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Cultura Pará
+http://177.74.1.38/funtelpa/tv_funtelpa/playlist.m3u8
+#EXTINF:-1 group-title="JORNALISMO",Record News - TV Guará (MA)
+https://59f2354c05961.streamlock.net:1443/tvguara/_definst_/tvguara/chunklist.m3u8
+#EXTINF:-1 group-title="JORNALISMO",Record News
+https://playplusnews-lh.akamaihd.net/i/pp_nws@377849/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Band
+https://evpp.mm.uol.com.br/geob_band/app/chunklist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",SBT - TV Jornal Caruaru (PE)
+http://evpp.mm.uol.com.br/ne10/ne10-tvjornal-caruaru-video-web.sdp/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",SBT Interior SP
+https://5a1c76baf08c0.streamlock.net/z343-live/z343/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",SBT Interior SP
+https://5a1c76baf08c0.streamlock.net/z343-live/z343/chunklist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",SBT - TV Cidade Verde - (PI)
+http://192.99.46.182:1935/pioneira-tv3/pioneira-tv3/playlist.m3u8?Grupo_UP_e_DOWN
+#EXTINF:-1 group-title="TV ABERTA",SBT - TV Difusora (MA)
+https://5a1c76baf08c0.streamlock.net/z438-live/stream/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV
+https://playplusspo-lh.akamaihd.net/i/pp_sp@350176/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Natal
+https://59f2354c05961.streamlock.net:1443/tvtropical/_definst_/tvtropical/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Rio de Janeiro
+https://playplusrjo-lh.akamaihd.net/i/pp_rj@377859/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Bahia
+https://playplussdr-lh.akamaihd.net/i/pp_sdr@377858/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Distrito Federal
+https://playplusbsa-lh.akamaihd.net/i/pp_bsa@377860/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Belo Horizonte
+https://playplusbh-lh.akamaihd.net/i/pp_bh@377862/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Pará
+https://playpluspa-lh.akamaihd.net/i/pp_pa@377468/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Goiás
+https://playplusgoya-lh.akamaihd.net/i/pp_gna@377833/master.m3u8
+#EXTINF:-1 group-title="TV ABERTA",RecordTV Rio Grande do Sul
+https://playpluspoa-lh.akamaihd.net/i/pp_poa@377864/master.m3u8
+#EXTINF:-1 group-title="JORNALISMO",Record News
+https://playplusnews-lh.akamaihd.net/i/pp_nws@377849/master.m3u8
+#EXTINF:-1 group-title="JORNALISMO",Record News - TV Guará (MA)
+https://59f2354c05961.streamlock.net:1443/tvguara/_definst_/tvguara/chunklist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Rede Brasil (SP)
+https://59f2354c05961.streamlock.net:1443/rbtv/_definst_/rbtv/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Cultura Pará
+http://177.74.1.38/funtelpa/tv_funtelpa/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV Itararé - Cultura (PB)
+http://stream.tvitarare.com.br/hls/site/site.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Catve - Cultura (PR)
+https://5b33b873179a2.streamlock.net:1443/live/livestream/chunklist_w125430112.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Paraná Turismo
+http://200.189.113.201/hls/tve.m3u8
+#EXTINF:-1 group-title="INFANTIL",Kuriakos Kids
+http://c2.manasat.com:1935/kkids/kkids2/chunklist_w817493835.m3u8
+#EXTINF:-1 group-title="VARIEDADES",RTP Internacional
+http://streaming-live-app.rtp.pt/liverepeater/smil:rtpi.smil/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TVE Bahia
+http://stream2.ba.gov.br/hls-live/livepkgr/_definst_/irdeb/pgm-1.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Rede Minas
+https://v4-slbps-sambavideos.akamaized.net/live/3282%2C8114%2Cec4b5a296d97fa99bf990662f5b4f8e1%3Bbase64np%3BMc8VDxqNjXKCAf8%21/amlst%3AMc_tFgfGiHOdQXPB/chunklist_.m3u8
+#EXTINF:-1 group-title="TV ABERTA",TV União (DF)
+https://596639ebdd89b.streamlock.net/tvuniao/tvuniao/playlist.m3u8
+#EXTINF:-1 group-title="VARIEDADES",TV Liberdade - WebTV
+http://01.paineldevideo.com/rtguarany/rtguarany/playlist.m3u8
+#EXTINF:-1 group-title="TV ABERTA",Rede Brasil - TV Marajoara (PA)
+http://video01.kshost.com.br/tv31966/tv31966/playlist.m3u8
+#EXTINF:-1 group-title="ESPORTES",Real Madrid TV
+https://rmtv24hweblive-lh.akamaihd.net/i/rmtv24hweben_1@300662/master.m3u8
+#EXTINF:-1 group-title="VARIEDADES",CBTV Now
+https://oj7lng29dg82-hls-live.5centscdn.com/lives/f7b44cfafd5c52223d5498196c8a2e7b.sdp/index.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",Canção Nova
+http://tvajuhls-lh.akamaihd.net:80/i/tvdesk_1@147040/master.m3u8
+#EXTINF:-1 group-title="RELIGIOSOS",Rede Vida
+https://cvd1.cds.ebtcvd.net/live-redevida/smil:redevida.smil/chunklist.m3u8`
+
+          function convertInto2KOM(m3u) {
+            return m3u
+                .replace('#EXTM3U', '')
+                .split('#EXTINF:-1 ')
+                .slice(1)
+                .map(function(str, index) {
+                    var channel = str.split('\n').slice(0,-1);
+                    let capiton = channel[0].replace('group-title="', '').split('",');
+                    return {
+                        "id": index + 1,
+                        "number": index + 1,
+                        "group": capiton[0],
+                        "caption": capiton[1],
+                        "icon_url": "",
+                        "tv_categories": [2],
+                        "streaming_url": channel[1],
+                        "announce": "",
+                        "volume_shift": 0
+                    };
+                });
+        }
+
+        var canais = convertInto2KOM(lista);
+        
+        canais.sort(function(a, b) {return a.caption > b.caption ? 1 : a.caption < b.caption ? -1 : 0; });
+
+        for (let i = 0; i < canais.length; i++) {
+          const canal = canais[i];
+          $("#lista-de-canais").append(`<li class="canal" data-streaming_url="${canal.streaming_url}">${canal.caption}</li>`)
+        }
+
+        $(document).ready(function(){
+
+          $(".canal").click(function(){
+            console.log("trocando de canal " + this.dataset.streaming_url);
+            videojs("my-video").src(this.dataset.streaming_url)
+            videojs("my-video").play()
+          });
+
+        })
+
+    </script>
+  </body>
