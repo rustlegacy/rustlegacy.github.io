@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Oi princesa <3</h1>
+    <button onclick="baixarMusicas">Baixar Músicas</button>
+    <div id="box_music"></div>
+</body>
+<script>
+    function baixarMusicas() {
+        for (let i = 0; i <= 38; i++) {
+            var link = document.createElement('a');
+            link.href = `https://rustlegacy.github.io/assets/musicas/funk/${i}.mp3`;
+            link.download = '';
+            document.getElementById('box_music').appendChild(link);
+            link.click();
+        }
+    }
+</script>
+</html>
+
+
+
