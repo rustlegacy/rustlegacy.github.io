@@ -1,5 +1,10 @@
 {
   "version": "1.0.0",
   "servers": [
+    {
+      "ip": "magicrustv25.duckdns.org",
+      "port": "28015",
+      "queryPort": "28016"
+    }
   ]
 }
