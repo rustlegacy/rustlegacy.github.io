@@ -2,6 +2,8 @@
   "version": "1.0.0",
   "servers": [
     {
+      "name": "Magic Rust",
+      "discord": "https://discord.gg/magicrustv25",
       "ip": "magicrustv25.duckdns.org",
       "port": "28015",
       "queryPort": "28016"
